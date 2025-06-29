@@ -4,5 +4,5 @@ var person = {
     status: "single",
 }
 
-console.log(person);
+console.log(typeof person);
 console.log(person.age); // It will print only age

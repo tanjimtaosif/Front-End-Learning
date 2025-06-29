@@ -23,3 +23,14 @@ let arg = (...arguments) => {
 }
 
 arg(4, 3, 5, 32);
+
+
+const test = (a, b) => {
+    return a + b
+}
+test();
+
+function test1(a, b) {
+    return a + b
+}
+test1()
