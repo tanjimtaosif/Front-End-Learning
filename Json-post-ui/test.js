@@ -29,7 +29,7 @@ function displayPosts(posts) {
     ${post.body.length > 20 ? '<span class="view-toggle">View More</span>' : ''}
   </p>
   <div class="card-footer">
-  <a href="read-more.html?id=${post.id}" class="read-more-btn" target="_blank">Read More</a>
+  <a href="test-read.html?id=${post.id}" class="read-more-btn" target="_blank">Read More</a>
     <img src="assets/info-icon.png" alt="Info Icon" class="info-icon" data-id="${post.id}" />
   </div>
 `;
