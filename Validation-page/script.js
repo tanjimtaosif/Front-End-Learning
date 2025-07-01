@@ -102,8 +102,7 @@ function validatePassword() {
     }
 
     errorBox.innerHTML = errors.map(e => "• " + e).join("<br>");
-
-    // Also revalidate retype password
+d
     validateRetypePassword();
 }
 
@@ -125,6 +124,22 @@ function validateRetypePassword() {
 }
 
 function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const password = document.getElementById("password").value;
+    const retypePassword = document.getElementById("retypePassword").value;
+
+    const msgBox = document.getElementById("message");
+
+    // will check if any field is empty
+    if (!name || !email || !phone || !password || !retypePassword) {
+        msgBox.style.color = "red";
+        msgBox.textContent = "All fields are required.";
+        return; // it show the validation msg
+    }
+
+    // the validation will work if all fields are filled 
     validateName();
     validateEmail();
     validatePhone();
@@ -134,11 +149,10 @@ function validateForm() {
     const errors = document.querySelectorAll(".error");
     const hasError = Array.from(errors).some(e => e.textContent !== "");
 
-    const msgBox = document.getElementById("message");
     msgBox.style.color = hasError ? "red" : "green";
-    msgBox.innerHTML = hasError
+    msgBox.textContent = hasError
         ? "Please fix the errors above before submitting."
-        : "✅ Sign-in successful!";
+        : "Sign-in successful!";
 }
 
 function togglePassword(fieldId, toggleElem) {
