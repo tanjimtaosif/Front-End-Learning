@@ -1,13 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #fdfdfd;
+  background-color: #F7F9FC;
   margin: 0;
   padding: 20px;
-}
-
-.heading {
-  text-align: center;
-  color: #222;
 }
 
 .search-area select {
