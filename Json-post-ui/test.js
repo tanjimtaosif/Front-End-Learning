@@ -85,6 +85,7 @@ document.getElementById("modalClose").addEventListener("click", function () {
 // Search functions
 document.getElementById("searchInput").addEventListener("input", handleSearch);
 document.getElementById("searchType").addEventListener("change", handleSearch);
+document.getElementById("combinedSearchInput").addEventListener("input", handleCombinedSearch);
 
 function handleSearch() {
     const input = document.getElementById("searchInput").value.trim();
@@ -104,6 +105,23 @@ function handleSearch() {
             return post.title.toLowerCase().includes(input.toLowerCase());
         }
         return false;
+    });
+
+    displayPosts(filtered);
+}
+function handleCombinedSearch() {
+    const input = document.getElementById("combinedSearchInput").value.trim().toLowerCase();
+
+    if (input === "") {
+        displayPosts(allPosts);
+        return;
+    }
+
+    const filtered = allPosts.filter(post => {
+        const isUserIdMatch = !isNaN(input) && post.userId === parseInt(input);
+        const isTitleMatch = post.title.toLowerCase().includes(input);
+
+        return isUserIdMatch || isTitleMatch;
     });
 
     displayPosts(filtered);

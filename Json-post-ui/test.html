@@ -11,15 +11,18 @@
 <body>
 
   <nav class="navbar">
-    <h1 class="heading">Search JSONPlaceholder Posts</h1>
-    <div class="search-area">
-      <select id="searchType">
+    <h1 class="heading">POST.UI</h1>
+    <div class="search-area" style="gap: 15px; flex-wrap: nowrap;">
+      <select id="searchType" style="flex: 0 0 180px;">
         <option value="userId">Search by User ID</option>
         <option value="id">Search by Post ID</option>
         <option value="title">Search by Title</option>
       </select>
 
-      <input type="text" id="searchInput" placeholder="Enter your search..." />
+      <input type="text" id="searchInput" placeholder="Enter your search..." style="flex: 1 1 250px;" />
+
+      <input type="text" id="combinedSearchInput" placeholder="Search by User ID or Title..."
+        style="flex: 1 1 300px;" />
     </div>
   </nav>
 

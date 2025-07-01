@@ -10,12 +10,17 @@ body {
   color: #222;
 }
 
-.search-area {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
+.search-area select {
+  min-width: 180px;
 }
+
+.search-area input {
+  min-width: 200px;
+  padding: 8px px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
 
 .search-area input,
 .search-area select {
@@ -80,8 +85,7 @@ body {
 /* Navbar*/
 .navbar {
   background-color: #e6f0ff;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding:10px ;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
