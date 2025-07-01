@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    color: #222;
+}
+
+.search-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.search-area input,
+.search-area select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Max 4 columns */
+  gap: 20px;
+}
+
+
+.post {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.post h3 {
+    background:#94b9db;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.post p {
+    color: #000000;
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+
+}
+
+.idContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    background-color: #e6f0ff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Navbar wrapper */
+.navbar {
+    background-color: #e6f0ff;
+    padding-left: 12px  ;
+    padding-right: 12px  ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Adjust heading inside navbar */
+.navbar .heading {
+    margin: 0;
+    font-size: 20px;
+    color: #4682A9;
+}
+
+/* Search area inside navbar */
+.navbar .search-area {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+
+/* Info icon container */
+.info-icon {
+  position: relative;
+  float: right;
+  cursor: pointer;
+  margin-top: -5px;
+  margin-right: -5px;
+  z-index: 1;
+}
+
+/* Info icon image */
+.info-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Modal box */
+.modal {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  width: 280px;
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  padding: 10px;
+  z-index: 10;
+}
+
+/* Show modal on icon hover */
+.info-icon:hover .modal {
+  display: block;
+}
+
+/* Modal text */
+.modal h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #4682A9;
+}
+
+.modal p {
+  font-size: 14px;
+  margin: 4px 0;
+  word-break: break-word;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .search-area {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar .search-area select,
+    .navbar .search-area input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

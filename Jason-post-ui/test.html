@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post Search</title>
+  <link rel="stylesheet" href="test.css" />
+</head>
+<body>
+
+ <nav class="navbar">
+  <h1 class="heading">Search JSONPlaceholder Posts</h1>
+  <div class="search-area">
+    <select id="searchType">
+      <option value="userId">Search by User ID</option>
+      <option value="id">Search by Post ID</option>
+      <option value="title">Search by Title</option>
+    </select>
+
+    <input type="text" id="searchInput" placeholder="Enter your search..." />
+  </div>
+</nav>
+
+  <div id="postContainer" class="container"></div>
+
+  <script src="test.js"></script>
+</body>
+</html>
