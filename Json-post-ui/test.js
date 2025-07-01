@@ -6,10 +6,10 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     })
     .catch(error => console.error("Error fetching data:", error));
 
-// Function to display posts in the UI
+// posts in the UI
 function displayPosts(posts) {
     const postContainer = document.getElementById("postContainer");
-    postContainer.innerHTML = ""; // clear old posts
+    postContainer.innerHTML = "";
 
     posts.forEach(post => {
         const postElement = document.createElement("div");
@@ -38,16 +38,15 @@ function displayPosts(posts) {
     });
 }
 
-// Attach listeners to input and dropdown
 document.getElementById("searchInput").addEventListener("input", handleSearch);
 document.getElementById("searchType").addEventListener("change", handleSearch);
 
-// Handle search by title, userId or postId
+// search by title, userId or postId
 function handleSearch() {
     const input = document.getElementById("searchInput").value.trim();
     const searchType = document.getElementById("searchType").value;
 
-    // Show all if input is empty
+    // it will show all posts if the input is empty
     if (input === "") {
         displayPosts(allPosts);
         return;
@@ -55,11 +54,10 @@ function handleSearch() {
 
     const filtered = allPosts.filter(post => {
         if (searchType === "userId") {
-            return post.userId === parseInt(input); // exact match
+            return post.userId === parseInt(input);
         } else if (searchType === "id") {
-            return post.id === parseInt(input);     // exact match
+            return post.id === parseInt(input);
         } else if (searchType === "title") {
-            // ✅ only search inside title (not body)
             return post.title.toLowerCase().includes(input.toLowerCase());
         }
         return false;
