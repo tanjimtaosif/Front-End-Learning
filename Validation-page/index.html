@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Portal Sign-In</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <form class="form" onsubmit="event.preventDefault(); validateForm();">
+            <h2>Student Portal Sign-In</h2>
+
+            <input type="text" id="name" placeholder="Full Name" oninput="validateName()" />
+            <span class="error" id="nameError"></span>
+
+            <input type="text" id="email" placeholder="Email" oninput="validateEmail()" />
+            <span class="error" id="emailError"></span>
+
+            <input type="text" id="phone" placeholder="Phone (+88XXXXXXXXXXX)" oninput="validatePhone()" />
+            <span class="error" id="phoneError"></span>
+
+            <!-- Password -->
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" oninput="validatePassword()" />
+                <span class="toggle-password" onclick="togglePassword('password', this)">Show</span>
+            </div>
+            <span class="error" id="passwordError"></span>
+
+            <!-- Retype Password -->
+            <div class="input-group">
+                <input type="password" id="retypePassword" placeholder="Retype Password"
+                    oninput="validateRetypePassword()" />
+                <span class="toggle-password" onclick="togglePassword('retypePassword', this)">Show</span>
+            </div>
+            <span class="error" id="retypeError"></span>
+
+
+            <button type="submit">Sign In</button>
+            <p id="message"></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
