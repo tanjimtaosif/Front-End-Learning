@@ -13,15 +13,26 @@
 //     console.log(index);
 // }
 
-var numbers = ["Alom", "Hridoy", "Tanjim"];
+// var numbers = ["Alom", "Hridoy", "Tanjim"];
 
-for (var i = 0; i < numbers.length; i++) {
-    var element = numbers[i];
+// for (var i = 0; i < numbers.length; i++) {
+//     var element = numbers[i];
 
-    if (element == "Hridoy") {
-        console.log("Got you")
-    }
-    else {
-        console.log("Didn't got you")
-    }
+//     if (element == "Hridoy") {
+//         console.log("Got you")
+//     }
+//     else {
+//         console.log("Didn't got you")
+//     }
+// }
+
+for (i = 5; i >= 1; i++) {
+    console.log(i);
+
+}
+
+while (i <= 5) {
+    console.log(i);
+
+    i++;
 }
