@@ -1,40 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4 text-center">
-      <div className="flex gap-6 mb-6">
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="h-16 hover:scale-110 transition-transform duration-200" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="h-16 hover:scale-110 transition-transform duration-200" alt="React logo" />
-        </a>
+    <div className="min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-6">
+      <div className="bg-white/60 backdrop-blur-md shadow-lg rounded-2xl p-12 w-full max-w-lg space-y-8 text-center">
+        <ChildOne />
+        <ChildTwo count={count} />
+        <ChildThree setCount={setCount} />
+        <ChildFour count={count} />
       </div>
-
-      <h1 className="font-bold text-blue-700 mb-4">Counter App</h1>
-
-      <div className="bg-white shadow-lg rounded-xl p-6 w-full max-w-sm">
-        <button
-          onClick={() => setCount((count) => count + 1)}
-          className="bg-blue-600 hover:bg-blue-700 text-black font-semibold py-2 px-4 rounded transition-all duration-200 w-full"
-        >
-          count is {count}
-        </button>
-        <p className="text-sm text-gray-600 mt-3">
-          Edit <code className="bg-gray-200 px-1 py-0.5 rounded">src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-
-      <p className="mt-6 text-gray-500 text-sm">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
+  )
+}
+
+// Heading
+function ChildOne() {
+  return (
+    <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+      Counter App with Prop Drilling
+    </h1>
+  )
+}
+
+// count display
+function ChildTwo({ count }) {
+  return (
+    <div className="text-2xl bg-blue-100 text-blue-800 font-semibold py-4 px-8 rounded-lg">
+      Count: <span>{count}</span>
+    </div>
+  )
+}
+
+// button for increment and decrement
+function ChildThree({ setCount }) {
+  return (
+    <div className="flex flex-col gap-5 items-center">
+      <button
+        onClick={() => setCount(prev => prev + 1)}
+        className="bg-indigo-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg text-lg font-medium transition w-48 cursor-pointer"
+      >
+        Increase
+      </button>
+      <button
+        onClick={() => setCount(prev => prev - 1)}
+        className="bg-violet-500 hover:bg-red-600 text-white px-8 py-3 rounded-lg text-lg font-medium transition w-48 cursor-pointer"
+      >
+        Decrease
+      </button>
+    </div>
+  )
+}
+
+// count msg alert after 5 click
+function ChildFour({ count }) {
+  useEffect(() => {
+    if (count > 0 && count % 5 === 0) {
+      alert(`You have clicked the button ${count} times!`);
+    }
+  }, [count]);
+
+  return (
+    <p className="text-xl text-gray-700">
+      Clicked the button <strong>{count}</strong> times.
+    </p>
   )
 }
 
