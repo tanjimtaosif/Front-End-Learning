@@ -5,6 +5,11 @@ import App from './App';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import DashboardLayout from './pages/Dashboard/DashboardLayout';
+import Orders from './pages/Dashboard/Orders';
+import Messages from './pages/Dashboard/Messages';
+import Todo from './pages/Dashboard/Todo';
+
 import './index.css';
 
 const router = createBrowserRouter([
@@ -17,7 +22,17 @@ const router = createBrowserRouter([
       { path: '/contact', element: <Contact /> },
     ],
   },
+  {
+    path: '/dashboard',
+    element: <DashboardLayout />,
+    children: [
+      { path: 'orders', element: <Orders /> },
+      { path: 'messages', element: <Messages /> },
+      { path: 'todo', element: <Todo /> },
+    ],
+  },
 ]);
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
