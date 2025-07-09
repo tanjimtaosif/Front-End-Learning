@@ -35,9 +35,11 @@ const Home = () => {
                             <p className="text-gray-400">
                                 Clean, modern, and responsive website designs with intuitive UX/UI.
                             </p>
-                            <button className="mt-6 bg-green-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-green-400 transition">
-                                Get Service
-                            </button>
+                            <Link to="/contact">
+                                <button className="mt-6 bg-green-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-green-400 transition">
+                                    Get Service
+                                </button>
+                            </Link>
                         </div>
 
                         {/* Service Card 2 */}
@@ -48,9 +50,11 @@ const Home = () => {
                             <p className="text-gray-400">
                                 Interactive frontend applications using React and Tailwind CSS.
                             </p>
-                            <button className="mt-6 bg-green-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-green-400 transition">
-                                Get Service
-                            </button>
+                            <Link to="/contact">
+                                <button className="mt-6 bg-green-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-green-400 transition">
+                                    Get Service
+                                </button>
+                            </Link>
                         </div>
 
                         {/* Service Card 3 */}
@@ -61,9 +65,11 @@ const Home = () => {
                             <p className="text-gray-400">
                                 Optimize your site to rank better on Google and improve traffic.
                             </p>
-                            <button className="mt-6 bg-green-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-green-400 transition">
-                                Get Service
-                            </button>
+                            <Link to="/contact">
+                                <button className="mt-6 bg-green-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-green-400 transition">
+                                    Get Service
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
