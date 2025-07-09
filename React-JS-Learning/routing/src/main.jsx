@@ -9,6 +9,7 @@ import DashboardLayout from './pages/Dashboard/DashboardLayout';
 import Orders from './pages/Dashboard/Orders';
 import Messages from './pages/Dashboard/Messages';
 import Todo from './pages/Dashboard/Todo';
+import Blog from './pages/Blog'
 
 import './index.css';
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/about', element: <About /> },
       { path: '/contact', element: <Contact /> },
+      { path: '/blog', element: <Blog /> },
     ],
   },
   {

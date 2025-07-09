@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 import { SiTailwindcss, SiFirebase } from 'react-icons/si';
 import { Link } from 'react-router-dom';
-import OrderForm from '../components/OrderForm'; // ✅ import the modal
+import OrderForm from '../components/OrderForm'; // 
 
 const Home = () => {
     const [showModal, setShowModal] = useState(false);
@@ -20,12 +20,12 @@ const Home = () => {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative min-h-screen w-full overflow-hidden text-white px-6 flex items-center justify-center">
+            <section className="relative min-h-[70vh] w-full overflow-hidden text-white px-6 flex items-center justify-center">
                 <div className="absolute inset-0 z-0">
                     <Spline scene="https://prod.spline.design/smN9ZdgA852R-BRJ/scene.splinecode" />
                 </div>
                 <div className="z-10 text-center">
-                    <h4 className="text-green-500 text-lg mb-2">Hi, I'm Tanjim Mahtab</h4>
+                    <h4 className="text-green-500 text-lg mb-2 font-mono">Hi, I'm Tanjim Mahtab</h4>
                     <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
                         CREATING INTUITIVE <br /> AND ENGAGING <br /> DIGITAL PRODUCTS
                     </h1>

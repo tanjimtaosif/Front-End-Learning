@@ -24,11 +24,12 @@ const OrderSection = () => {
 
             <div className="w-full h-48 overflow-hidden rounded-md">
               <img
-                src="https://via.placeholder.com/400x200.png?text=Order+Image"
+                src=""
                 alt="Order Reference"
                 className="w-full h-full object-cover"
               />
             </div>
+            <button className="bg-green-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-green-400 transition">Complete</button>
           </div>
 
           {/* Another Order Card */}
@@ -52,6 +53,7 @@ const OrderSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
+            <button className="bg-green-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-green-400 transition">Complete</button>
           </div>
         </div>
       </div>
