@@ -48,7 +48,7 @@ export default function PostForm() {
                 value={formData.body}
                 onChange={handleChange}
             />
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full">
+            <button className="bg-purple-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full">
                 Add Post
             </button>
         </form>
