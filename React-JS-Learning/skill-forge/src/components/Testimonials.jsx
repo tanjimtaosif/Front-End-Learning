@@ -13,7 +13,7 @@ const testimonials = [
     },
     {
         quote: "Skill Forge’s real-world projects made learning fast and useful!",
-        name: "Anita Chan",
+        name: "Anita Chandra",
         role: "Aspiring Developer",
     },
 ];
