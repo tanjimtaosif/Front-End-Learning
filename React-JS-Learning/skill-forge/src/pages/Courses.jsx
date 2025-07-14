@@ -1,6 +1,7 @@
 import React from 'react';
 import PopularCourses from '../components/PopularCourses';
 import { Link } from 'react-router-dom';
+import Allcourse from '../components/Allcourse';
 
 export default function Courses() {
   return (
@@ -27,16 +28,7 @@ export default function Courses() {
 
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6">This Week's Most Popular Courses</h2>
-          <PopularCourses limit={3} />
-          <div className="mt-6 text-center">
-            <Link
-              to="/courses"
-              className="inline-block px-6 py-3 bg-green-500 text-white rounded hover:bg-green-600 transition"
-            >
-              See More Courses
-            </Link>
-          </div>
+          <Allcourse/>
         </div>
       </section>
     </div>
