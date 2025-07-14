@@ -5,7 +5,7 @@ export default function Footer() {
         <footer className="bg-black text-white py-10 mt-10">
             <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8">
                 <div>
-                    <h2 className="text-2xl font-bold mb-2">Tidemy</h2>
+                    <h2 className="text-2xl font-bold mb-2">Skill Forge</h2>
                     <p className="mb-4">Enter your email and get exclusive learning tips, course releases, and discounts straight to your inbox.</p>
                     <div className="flex">
                         <input type="email" placeholder="Enter Email" className="p-2 rounded-l bg-white text-black" />
