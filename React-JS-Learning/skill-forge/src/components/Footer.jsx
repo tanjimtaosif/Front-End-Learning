@@ -33,7 +33,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="text-center mt-6 text-gray-400">© 2025 Tidemy Inc. All rights reserved.</div>
+            <div className="text-center mt-6 text-gray-400">© 2025 Skill Forge Inc. All rights reserved.</div>
         </footer>
     );
 }

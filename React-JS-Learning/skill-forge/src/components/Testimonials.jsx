@@ -2,21 +2,22 @@ import React from 'react';
 
 const testimonials = [
     {
-        quote: "Tidemy Academy’s UI/UX course helped me refine my skills. Now I’m working with clients all over the world!",
-        name: "Sarah Viddi",
+        quote: "Skill Forge’s UI/UX course helped me refine my skills. Now I’m working with clients all over the world!",
+        name: "Rifat Tipu",
         role: "Freelance Designer",
     },
     {
-        quote: "Tidemy's bite-sized lessons made it possible to learn coding part-time!",
-        name: "Mike Tyson",
+        quote: "Skill Forge's bite-sized lessons made it possible to learn coding part-time!",
+        name: "Maruf Sheikh",
         role: "Marketing Manager",
     },
     {
-        quote: "Tidemy’s real-world projects made learning fast and useful!",
+        quote: "Skill Forge’s real-world projects made learning fast and useful!",
         name: "Anita Chan",
         role: "Aspiring Developer",
     },
 ];
+
 
 export default function Testimonials() {
     return (

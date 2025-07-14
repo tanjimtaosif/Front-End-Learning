@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../assets/hero-image.png'; // Ensure this file exists
+import heroImage from '../assets/courses/hero-image.png'; // Ensure this file exists
 
 export default function HeroSection() {
     return (
