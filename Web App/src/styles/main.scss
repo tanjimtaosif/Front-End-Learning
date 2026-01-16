@@ -1,0 +1,115 @@
+/* Main SCSS Entry Point */
+@use "sass:map";
+
+/* Variables & Themes */
+$themes: (
+  "forest": (
+    "bg-primary": #1a2f23,
+    "bg-secondary": #2c4a3b,
+    "text-primary": #e8f5e9,
+    "accent": #4caf50,
+    "avatar-color": #a5d6a7,
+  ),
+  "ocean": (
+    "bg-primary": #0d1b2a,
+    "bg-secondary": #1b263b,
+    "text-primary": #e0e1dd,
+    "accent": #00b4d8,
+    "avatar-color": #90e0ef,
+  ),
+  "sunset": (
+    "bg-primary": #2d1b2e,
+    "bg-secondary": #4a2b4b,
+    "text-primary": #fde2e4,
+    "accent": #ff9e00,
+    "avatar-color": #ffb703,
+  ),
+  "minimal": (
+    "bg-primary": #ffffff,
+    "bg-secondary": #f8f9fa,
+    "text-primary": #212529,
+    "accent": #343a40,
+    "avatar-color": #adb5bd,
+  ),
+);
+
+:root {
+  --bg-primary: #{map.get(map.get($themes, "forest"), "bg-primary")};
+  --bg-secondary: #{map.get(map.get($themes, "forest"), "bg-secondary")};
+  --text-primary: #{map.get(map.get($themes, "forest"), "text-primary")};
+  --accent: #{map.get(map.get($themes, "forest"), "accent")};
+  --avatar-color: #{map.get(map.get($themes, "forest"), "avatar-color")};
+
+  --font-main: "Inter", system-ui, sans-serif;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Mixin for Generating Theme Classes */
+@each $name, $colors in $themes {
+  [data-theme="#{$name}"] {
+    --bg-primary: #{map.get($colors, "bg-primary")};
+    --bg-secondary: #{map.get($colors, "bg-secondary")};
+    --text-primary: #{map.get($colors, "text-primary")};
+    --accent: #{map.get($colors, "accent")};
+    --avatar-color: #{map.get($colors, "avatar-color")};
+  }
+}
+
+/* Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+  overflow: hidden; /* Prevent scroll for app-like feel */
+}
+
+/* BEM Utilities */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Dropdown Fix */
+select {
+  cursor: pointer;
+  
+  option {
+    background-color: var(--bg-primary); 
+    color: var(--text-primary); 
+  }
+}
+
+.control-select {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: var(--text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  
+  &:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.3);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--accent);
+  }
+}
