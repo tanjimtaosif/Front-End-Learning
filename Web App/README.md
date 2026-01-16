@@ -2,7 +2,7 @@
 
 A beautiful, interactive screen timer built with React and Vite. Designed to make time management soothing and visually engaging.
 
-![App Preview](https://via.placeholder.com/800x400?text=Screen+Timer+Preview)
+[**🚀 Live Demo**](https://timer-tanjim.netlify.app/)
 
 ## ✨ Features
 
