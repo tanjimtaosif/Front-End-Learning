@@ -17,6 +17,16 @@ export default function UserForm({ initialData = {}, onSubmit }) {
     cgpa: initCgpa,
   } = educationalQualifications;
 
+  if (isError) {
+    console.error(error); // This will log the entire error object to the console
+    const errorMessage = error?.data?.message || error?.message || "Unknown error occurred";
+    return (
+      <p className="text-center py-10 text-red-600">
+        Error loading users: {errorMessage}
+      </p>
+    );
+  }
+
   // Build default form state
   const buildFormState = () => ({
     image: restData.image || '',
