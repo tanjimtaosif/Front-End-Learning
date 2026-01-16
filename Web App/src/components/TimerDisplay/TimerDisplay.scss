@@ -1,0 +1,106 @@
+.timer-display {
+  margin: 2rem 0;
+  text-align: center;
+  position: relative;
+
+  &--digital {
+    font-size: 6rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -2px;
+    color: var(--text-primary);
+    text-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  &--minimal {
+    font-size: 8rem;
+    font-weight: 200;
+    opacity: 0.9;
+    font-family: monospace;
+  }
+
+  &--analog {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    position: relative;
+    
+    // Background glow behind the gauge
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(var(--accent), 0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    svg {
+       overflow: visible;
+       transform: rotate(-90deg); /* 0 degrees at top */
+    }
+
+    /* Gauge Tracks */
+    .track-bg {
+      fill: none;
+      stroke: rgba(255,255,255,0.1);
+      stroke-width: 4;
+    }
+
+    .track-ticks {
+      stroke: var(--text-primary);
+      stroke-width: 2;
+      stroke-linecap: round;
+      opacity: 0.2;
+    }
+
+    .progress-bar {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 6;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1s linear;
+      filter: drop-shadow(0 0 4px var(--accent));
+    }
+
+    .tick-active {
+      stroke: var(--accent);
+      opacity: 1;
+      stroke-width: 2;
+      transition: stroke 0.3s ease;
+    }
+
+    .marker-dot {
+      fill: #fff;
+      filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));
+    }
+
+    /* Digital readout inside */
+    .digital-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      
+      .time {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        line-height: 1;
+      }
+      
+      .label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.6;
+        margin-top: 5px;
+      }
+    }
+  }
+}
