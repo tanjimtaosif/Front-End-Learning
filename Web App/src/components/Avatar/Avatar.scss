@@ -1,0 +1,86 @@
+.avatar {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transition: all 0.5s ease;
+
+  &--blob {
+    background-color: var(--avatar-color);
+    border-radius: 50%;
+    animation: blob-bounce 3s infinite ease-in-out;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    
+    // Eyes
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 40%;
+      width: 12px;
+      height: 12px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      animation: blink 4s infinite;
+    }
+    &::before { left: 35%; }
+    &::after { right: 35%; }
+  }
+
+  &--robot {
+    background-color: var(--avatar-color);
+    border-radius: 12px;
+    animation: robot-hover 2s infinite ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Simple geometric face
+    &::before {
+      content: '';
+      width: 60%;
+      height: 20px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+    }
+  }
+
+  &--ghost {
+    background-color: var(--avatar-color);
+    border-radius: 50% 50% 0 0;
+    height: 160px;
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%, 85% 90%, 70% 100%, 55% 90%, 40% 100%, 25% 90%, 10% 100%);
+    animation: ghost-float 3s infinite ease-in-out;
+    opacity: 0.8;
+
+    &::before, &::after {
+       content: '';
+      position: absolute;
+      top: 30%;
+      width: 15px;
+      height: 15px;
+      background: #000;
+      border-radius: 50%;
+    }
+    &::before { left: 30%; }
+    &::after { right: 30%; }
+  }
+}
+
+@keyframes blob-bounce {
+  0%, 100% { transform: scale(1) translateY(0); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { transform: scale(1.05) translateY(-10px); border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+@keyframes robot-hover {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes ghost-float {
+  0%, 100% { transform: translateY(0) skewX(0deg); }
+  50% { transform: translateY(-20px) skewX(2deg); }
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
